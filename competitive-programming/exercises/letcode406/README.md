@@ -1,0 +1,3 @@
+- https://www.geeksforgeeks.org/the-stock-span-problem/
+- https://www.youtube.com/watch?v=XlD5VsOZsyA
+- https://leetcode.com/problems/queue-reconstruction-by-height/
