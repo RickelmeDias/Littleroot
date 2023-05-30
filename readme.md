@@ -18,10 +18,10 @@ Aqui, você pode me acompanhar em minha jornada de aprendizado em Engenharia de 
 
 # Tabela de Conteúdos
 
-| Tema                                                  | Descrição                                                 |
+| Topico                                                | Descrição                                                 |
 | ----------------------------------------------------- | --------------------------------------------------------- |
 | [Maratona de Programação](./competitive-programming/) | Aulas, exercicios e guias sobre a maratona de programação |
-| [Computação](./computing/)                            | Outros tópicos de computação.                             |
+| [Computação](./computing/readme.md#tabela-de-conteúdos)                            | Outros tópicos de computação.                             |
 | [Matemática](./mathematics/)                          | Outros tópicos de matematica.                             |
 
 <br><br><br>
@@ -38,8 +38,8 @@ Here, you can join me on my journey of learning Computer Engineering!
 
 Here you can access my contents easy filtering by subject type.
 
-| Subject                                               | Description                                                 |
+| Topic                                                 | Description                                                 |
 | ----------------------------------------------------- | ----------------------------------------------------------- |
 | [Competitive Programming](./competitive-programming/) | Classes, exercises and guides about competitive programming |
-| [Computing](./computing/)                             | More computing topics.                                      |
+| [Computing](./computing/readme.md#table-of-contents)                             | More computing topics.                                      |
 | [Mathematics](./mathematics/)                         | More mathematics topics.                                    |
