@@ -8,3 +8,7 @@
     - **2.3 Ordenação, busca binária e complexidade**: Conteúdo Estudado.
     - **2.4 Two pointers, recursão e torre de Hanói**:
         - Exercício básico de torre de Hanói feito, [clique aqui para ver](./base/Two%20pointers%2C%20recurs%C3%A3o%20e%20torre%20de%20Han%C3%B3i/Torres-de-Hanoi-2251.cpp).
+
+- **3. STL**:
+    - Exemplos de aplicações do STL em [C++](./STL/)
+    - Exercicio Resolvido (2653) em [C++](../../exercises/uri/2653/2653.cpp)
