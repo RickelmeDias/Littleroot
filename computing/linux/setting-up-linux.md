@@ -15,6 +15,26 @@ caso o bash não inicie ao abrir o terminal podes tentar:
 
 - https://askubuntu.com/questions/131823/how-to-make-zsh-the-default-shell
 
+no caso, eu fiz:
+
+1. Alteração no arquivo:
+
+>
+>Open /etc/passwd:
+>
+>`sudo vi /etc/passwd`
+>
+>Find the line with your username:
+>
+>`username:x:1634231:100:Your Name:/home/username:/bin/bash`
+>
+>and replace bash with zsh:
+>
+>`username:x:1634231:100:Your Name:/home/username:/bin/zsh`
+>
+
+2. Também é possivel fazer: `sudo chsh -s /bin/zsh $USER`, o meu resolveu até aqui, mas foi necessario `reboot`.
+
 e depois dar um `reboot`.
 
 ###### Instalação de plugins para o Zsh
