@@ -11,6 +11,12 @@
 ###### Configuração do Zsh
 `sudo chsh -s $(which zsh)`
 
+caso o bash não inicie ao abrir o terminal podes tentar:
+
+- https://askubuntu.com/questions/131823/how-to-make-zsh-the-default-shell
+
+e depois dar um `reboot`.
+
 ###### Instalação de plugins para o Zsh
 1. zsh-syntax-highlighting: `git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions`
 2. zsh-autosuggestions: `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
