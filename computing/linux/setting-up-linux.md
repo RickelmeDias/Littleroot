@@ -225,3 +225,5 @@ Ao abrir você deverá criar um serivdor que é:
 - password: suasenha
 
 O restante pode deixar padrão, e adicione um nome ao servidor, em seguida basta criar e pronto.
+
+Tente rodar o `asdf` se estiver tudo ok, certo, se tiver algum problema pode tentar: https://github.com/asdf-vm/asdf/issues/279.
