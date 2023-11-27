@@ -64,6 +64,13 @@ Depois pode instalar:
 
 `asdf install python latest`
 
+Adicionar ao `~/.baschrc`
+1. `. "$HOME/.asdf/asdf.sh"`
+2. `. "$HOME/.asdf/completions/asdf.bash"`
+
+E no `~/.zshrc`
+1. `. "$HOME/.asdf/asdf.sh"`
+
 #### Instalando Docker
 
 ###### Adicionar "Docker's official GPG key":
@@ -93,6 +100,11 @@ echo \
 ###### Dando permissão ao docker
 
 `sudo usermod -aG docker $USER`
+
+
+#### Gerandno ssh
+
+`ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "email@email.email"`
 
 ## Imporantate Reiniciar! Então:
 
