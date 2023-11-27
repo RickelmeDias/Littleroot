@@ -164,3 +164,64 @@ Imporantate Reiniciar! Então: `reboot`
 3. `asdf install ruby 2.6.3`
 4. `asdf global ruby 2.6.3`
 5. Instalar os dotfiles YADR: https://github.com/skwp/dotfiles#readme
+
+
+#### Instalndo Postgresql com PgAdmin
+
+###### PostgreSQL
+> https://www.postgresql.org/download/linux/ubuntu/
+
+```
+# Create the file repository configuration:
+sudo sh -c 'echo "deb https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+
+# Import the repository signing key:
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+
+# Update the package lists:
+sudo apt-get update
+
+# Install the latest version of PostgreSQL.
+# If you want a specific version, use 'postgresql-12' or similar instead of 'postgresql':
+sudo apt-get -y install postgresql
+```
+
+Se instalou tudo corretamente verifique se o status está ativo: `sudo systemctl status postgresql`
+
+Se estiver ativo, então entre para mudar a senha do seu usuario `postgres`, usando o comando `sudo -u postgres psql` você acessa o psql, onde podera alterar a senha com o seguinte comando:
+`alter user postgres password 'suasenha';`.
+
+
+###### PgAdmin4
+> https://www.pgadmin.org/download/pgadmin-4-apt/
+
+```
+# Install the public key for the repository (if not done previously):
+curl -fsS https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo gpg --dearmor -o /usr/share/keyrings/packages-pgadmin-org.gpg
+
+# Create the repository configuration file:
+sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
+
+#
+# Install pgAdmin
+#
+
+# Install for both desktop and web modes:
+sudo apt install pgadmin4
+
+# Install for desktop mode only:
+sudo apt install pgadmin4-desktop
+```
+
+Eu removi o web, deixei apenas o PgAdmin4 Desktop. Se você tiver algum problema ao iniciar o PgAdmin4, algo como `PgAdmin4 "the application server could not be contacted"`, você poderá rodar os comandos abaixo:
+
+> Solução abaixo: https://askubuntu.com/a/1245065
+
+1. `sudo python3 /usr/share/pgadmin4/web/pgAdmin4.py`, esse irá apresentar um erro dizendo que não existe ou algo do genero.
+2. você irá criar `sudo mkdir -p /var/cache/pgadmin/sessions`, em seguida, poderá abrir novamente o PgAdmin4 e ele irá iniciar normalmente.
+
+Ao abrir você deverá criar um serivdor que é: 
+- host: localhost
+- password: suasenha
+
+O restante pode deixar padrão, e adicione um nome ao servidor, em seguida basta criar e pronto.
