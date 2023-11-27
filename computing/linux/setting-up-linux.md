@@ -69,6 +69,15 @@ ZSH_THEME="daveverwer"
 
 #### Instalando Ambiente
 
+Instalando o [asdf](https://asdf-vm.com/guide/getting-started.html): `git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1`
+
+Adicionar ao `~/.baschrc`
+1. `. "$HOME/.asdf/asdf.sh"`
+2. `. "$HOME/.asdf/completions/asdf.bash"`
+
+E no `~/.zshrc`
+1. `. "$HOME/.asdf/asdf.sh"`
+   
 - Para ver todos plugins de asdf: `asdf plugin list all`
 - Para adicionar plugins: `asdf plugin add <name> <git-url>` ou `asdf plugin add <name>`
 - Para ver apenas as versões de uma linguagem, caso não tenha um latest: `asdf list-all java`
@@ -77,25 +86,34 @@ Linguagens a serem instaladas:
 
 1. `asdf install nodejs latest`
 2. `asdf install rust latest`
-3. `asdf install java latest`
-4. `asdf install golang latest`
+3. Java 8: `asdf install java adoptopenjdk-8.0.181+13`
+4. Java 11: `asdf install java openjdk-11`
+5. Java 17: `asdf install java openjdk-11`
+6. `asdf install golang latest`
+
+Agora adicione as versões como sendo a global do seu ambiente (você pode alterar de acordo com  a necessidade):
+
+1. `asdf global nodejs latest`
+2. `asdf global rust latest`
+3. `asdf global java openjdk-11`
+4. `asdf global golang latest`
+
+Se quiser ver as versões instaladas de uma linguagem, no exemplo java, você pode: `asdf list java`
+
+Exemplo, se você tem um projeto Java da versão 1.8, você pode fazer dentro da pasta desse projeto o comando: `asdf local java adoptopenjdk-8.0.181+13`, que para aquele projeto será rodado o java 8.
 
 ###### Para o Python:
 
 Antes de instalar python verificar pacotes e acompanhar instalação para ver se está correta:
 
-`sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget`
+1. `sudo apt-get update`
+2. `sudo apt-get install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev`
 
 Depois pode instalar:
 
-`asdf install python latest`
-
-Adicionar ao `~/.baschrc`
-1. `. "$HOME/.asdf/asdf.sh"`
-2. `. "$HOME/.asdf/completions/asdf.bash"`
-
-E no `~/.zshrc`
-1. `. "$HOME/.asdf/asdf.sh"`
+1. `asdf install python 3.10.6`
+2. `asdf global python 3.10.6`
+3. Então o comando `python --version` deverá mostrar Python 3.10.6
 
 #### Instalando Docker
 
@@ -107,7 +125,7 @@ E no `~/.zshrc`
 5. `sudo chmod a+r /etc/apt/keyrings/docker.gpg`
 
 ###### Adidiconando repositorio:
-1. `echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null` 
+  1. `echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null` 
 
 ou
 
@@ -121,17 +139,28 @@ echo \
 
 ###### Instalando
 
-`sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
+1. `sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
 
 ###### Dando permissão ao docker
 
-`sudo usermod -aG docker $USER`
+1. `sudo usermod -aG docker $USER`
+
+Imporantate Reiniciar! Então: `reboot`
 
 
 #### Gerandno ssh
 
-`ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "email@email.email"`
+1. `ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "email@email.email"`
 
-## Imporantate Reiniciar! Então:
+#### Configurando o Git
 
-`reboot`
+1. `git config --global user.name "Seu Nome"`
+2. `git config --global user.email "email@email.email"`
+
+#### Configurando o Ambiente de Código
+
+1. `sudo apt install tmux`
+2. `sudo apt install tilix`
+3. `asdf install ruby 2.6.3`
+4. `asdf global ruby 2.6.3`
+5. Instalar os dotfiles YADR: https://github.com/skwp/dotfiles#readme
