@@ -233,7 +233,7 @@ Tente rodar o `asdf` se estiver tudo ok, certo, se tiver algum problema pode ten
 > https://www.jetbrains.com/pt-br/idea/download/download-thanks.html?platform=linux&code=IIC
 
 - Download Intellij
-- Extract intellij to /opt-folder: sudo tar -xvf <intellij.tar> -C /opt/ (the -C option extracts the tar to the folder /opt/)
+- Extract intellij to /opt-folder: `sudo tar -xvf <intellij.tar> -C /opt/` (the -C option extracts the tar to the folder /opt/)
 - Create a Desktop Entry File called idea.desktop (see example file below) and store it anywhere you want (let's assume in your home directory)
 - Move the idea.desktop from your home directory to /usr/share/applications: sudo mv ~/idea.desktop /usr/share/applications/
 
