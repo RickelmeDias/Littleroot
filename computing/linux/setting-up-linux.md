@@ -227,3 +227,28 @@ Ao abrir você deverá criar um serivdor que é:
 O restante pode deixar padrão, e adicione um nome ao servidor, em seguida basta criar e pronto.
 
 Tente rodar o `asdf` se estiver tudo ok, certo, se tiver algum problema pode tentar: https://github.com/asdf-vm/asdf/issues/279.
+
+
+### Instalar IntelliJ Community
+> https://www.jetbrains.com/pt-br/idea/download/download-thanks.html?platform=linux&code=IIC
+
+- Download Intellij
+- Extract intellij to /opt-folder: sudo tar -xvf <intellij.tar> -C /opt/ (the -C option extracts the tar to the folder /opt/)
+- Create a Desktop Entry File called idea.desktop (see example file below) and store it anywhere you want (let's assume in your home directory)
+- Move the idea.desktop from your home directory to /usr/share/applications: sudo mv ~/idea.desktop /usr/share/applications/
+
+Now (in a lot) Ubuntu versions you can start the application after the GUI is restarted. If you don't know how to do that, you can restart your PC..
+
+idea.desktop (this is for community edition version 14.1.2, you have to change the paths in Exec= and Icon= lines if the path is different for you):
+
+```
+[Desktop Entry]                                                                 
+Encoding=UTF-8
+Name=IntelliJ IDEA
+Comment=IntelliJ IDEA
+Exec=/opt/ideaIC-14.1.2/bin/idea.sh
+Icon=/opt/ideaIC-14.1.2/bin/idea.png
+Terminal=false
+StartupNotify=true
+Type=Application
+```
